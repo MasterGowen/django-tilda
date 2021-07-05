@@ -1,11 +1,11 @@
 import os
+
 import requests
 from django.conf import settings
 from django.utils.timezone import now
 
-from .helpers import download_file, make_unique
 from . import models
-
+from .helpers import download_file, make_unique
 
 API_HOST = 'http://api.tildacdn.info/v1'
 API_PAYLOAD = {

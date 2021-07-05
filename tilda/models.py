@@ -1,59 +1,59 @@
 # coding: utf-8
 import os
-from django.db import models
+
 from django.conf import settings
+from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
 class TildaPage(models.Model):
-
     id = models.CharField(
-        _(u'Page id'),
+        _("Page id"),
         max_length=50,
         primary_key=True,
         unique=True
     )
 
     title = models.CharField(
-        _(u'Title'),
+        _("Title"),
         max_length=100
     )
 
     html = models.TextField(
-        _(u'HTML'),
+        _("HTML"),
         blank=True
     )
 
     images = models.TextField(
-        _(u'Images'),
+        _("Images"),
         blank=True
     )
 
     css = models.TextField(
-        _(u'CSS'),
+        _("CSS"),
         blank=True
     )
 
     js = models.TextField(
-        _(u'JS'),
+        _("JS"),
         blank=True
     )
 
     synchronized = models.DateTimeField(
-        _(u'Synchronized time'),
+        _("Synchronized time"),
         blank=True,
         null=True
     )
 
     created = models.DateTimeField(
-        _(u'Created'),
+        _("Created"),
         auto_now_add=True
     )
 
     class Meta:
-        ordering = ('title', )
-        verbose_name = _(u'page')
-        verbose_name_plural = _(u'Tilda Pages')
+        ordering = ('title',)
+        verbose_name = _("page")
+        verbose_name_plural = _("Tilda Pages")
 
     def get_images_list(self):
         if self.images:

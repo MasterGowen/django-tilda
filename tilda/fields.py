@@ -1,8 +1,8 @@
 from django import forms
+from django.apps import apps
 from django.conf import settings
 from django.db import models
 from django.template.loader import render_to_string
-from django.apps import apps
 
 
 class TildaWidget(forms.Widget):
@@ -11,11 +11,11 @@ class TildaWidget(forms.Widget):
         is_required = self.is_required
 
         if not hasattr(settings, 'TILDA_PUBLIC_KEY') or \
-           not hasattr(settings, 'TILDA_SECRET_KEY') or \
-           not hasattr(settings, 'TILDA_PROJECTID') or \
-           not settings.TILDA_PUBLIC_KEY or \
-           not settings.TILDA_SECRET_KEY or \
-           not settings.TILDA_PROJECTID:
+                not hasattr(settings, 'TILDA_SECRET_KEY') or \
+                not hasattr(settings, 'TILDA_PROJECTID') or \
+                not settings.TILDA_PUBLIC_KEY or \
+                not settings.TILDA_SECRET_KEY or \
+                not settings.TILDA_PROJECTID:
             is_need_config = True
 
         TildaPage = apps.get_model('tilda', 'TildaPage')
