@@ -16,8 +16,8 @@ Synchronization available only for **published** in Project pages.
 Supported versions
 ------------------
 
--  Django >= 2.0 (old version supported >= 1.10)
--  Python 2.7, >=3.5
+-  Django 3.0,3.1,3.2
+-  Python >=3.5
 
 Screenshots
 -----------
